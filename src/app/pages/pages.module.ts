@@ -12,6 +12,8 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 import { SharedModule } from '../shared/shared.module';
 import { PAGES_ROUTES } from './pages.routes';
 import { ChartsModule } from 'ng2-charts';
+import { PromesasComponent } from './promesas/promesas.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { ChartsModule } from 'ng2-charts';
     Graficas1Component,
     IncrementadorComponent,
     GraficaDonaComponent,
-    AccountSettingsComponent
+    AccountSettingsComponent,
+    PromesasComponent,
+    RxjsComponent
   ],
   imports: [
     SharedModule,
