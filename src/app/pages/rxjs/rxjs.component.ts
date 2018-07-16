@@ -19,7 +19,7 @@ export class RxjsComponent implements OnInit {
         }
       }, 1000);
     });
-
+    
     obs.subscribe( numero => console.log('​RxjsComponent -> constructor -> numero', numero));
    }
 
