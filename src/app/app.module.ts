@@ -9,6 +9,7 @@ import { NopagefoundComponent } from './shared/nopagefound/nopagefound.component
 import { RegisterComponent } from './login/register.component';
 
 import { ServiceModule } from './services/service.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,7 +23,9 @@ import { ServiceModule } from './services/service.module';
     BrowserModule,
     APP_ROUTES,
     PagesModule,
-    ServiceModule
+    ServiceModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

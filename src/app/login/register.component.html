@@ -4,7 +4,7 @@
 <section id="wrapper" class="login-register login-sidebar" style="background-image:url(../assets/images/background/login-register.jpg);">
   <div class="login-box card">
     <div class="card-body">
-      <form class="form-horizontal form-material" id="loginform" action="index.html">
+      <form ngNativeValidate [formGroup]="formRegister" (ngSubmit)="userRegister()" class="form-horizontal form-material" id="loginform" action="index.html">
         <a href="javascript:void(0)" class="text-center db">
           <img src="../assets/images/logo-icon.png" alt="Home" />
           <br/>
@@ -14,28 +14,31 @@
         <small>Crea tu cuenta y disfruta</small>
         <div class="form-group m-t-20">
           <div class="col-xs-12">
-            <input class="form-control" type="text" required="" placeholder="Nombre">
+            <input formControlName="name" name="name" class="form-control" type="text" required placeholder="Nombre">
           </div>
         </div>
         <div class="form-group ">
           <div class="col-xs-12">
-            <input class="form-control" type="text" required="" placeholder="Correo">
+            <input class="form-control" formControlName="email" name="email" type="email" required placeholder="Correo">
           </div>
         </div>
         <div class="form-group ">
           <div class="col-xs-12">
-            <input class="form-control" type="password" required="" placeholder="Contraseña">
+            <input class="form-control" formControlName="password" name="password" type="password" required placeholder="Contraseña">
           </div>
         </div>
         <div class="form-group">
           <div class="col-xs-12">
-            <input class="form-control" type="password" required="" placeholder="Confirmar contraseña">
+            <input class="form-control"formControlName="password2" name="password2" type="password" required placeholder="Confirmar contraseña">
           </div>
+        </div>
+        <div class="form-group" *ngIf="formRegister.errors?.notEqual && !formRegister.pristine">
+          <p class="text-danger">Las contraseñas deben ser iguales</p>
         </div>
         <div class="form-group row">
           <div class="col-md-12">
             <div class="checkbox checkbox-primary p-t-0">
-              <input id="checkbox-signup" type="checkbox">
+              <input id="checkbox-signup" formControlName="terms" name="terms" type="checkbox">
               <label for="checkbox-signup"> Acepto todos los
                 <a href="#">Terminos y condiciones</a>
               </label>
@@ -50,7 +53,8 @@
         <div class="form-group m-b-0">
           <div class="col-sm-12 text-center">
             <p>¿Tienes una cuenta?
-              <a href="pages-login-2.html" class="text-info m-l-5">
+
+              <a [routerLink]="['/login']" class="text-info m-l-5">
                 <b>Inicia sesión</b>
               </a>
             </p>
