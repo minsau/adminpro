@@ -7,10 +7,11 @@ import { SidebarService, UsuarioService } from '../../services/service.index';
   styles: []
 })
 export class SidebarComponent implements OnInit {
-
+  user: any;
   constructor(public _sidebar: SidebarService, private _user: UsuarioService) { }
 
   ngOnInit() {
+    this.user = this._user.user;
   }
 
   logout() {

@@ -7,10 +7,11 @@ import { UsuarioService } from 'src/app/services/service.index';
   styles: []
 })
 export class HeaderComponent implements OnInit {
-
+  user: any;
   constructor(private _user: UsuarioService) { }
 
   ngOnInit() {
+    this.user = this._user.user;
   }
 
   logout() {
