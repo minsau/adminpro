@@ -15,6 +15,7 @@ import { PAGES_ROUTES } from './pages.routes';
 import { ChartsModule } from 'ng2-charts';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     GraficaDonaComponent,
     AccountSettingsComponent,
     PromesasComponent,
-    RxjsComponent
+    RxjsComponent,
+    ProfileComponent
   ],
   imports: [
     SharedModule,

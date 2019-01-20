@@ -64,6 +64,17 @@ export class UsuarioService {
     }));
   }
 
+  updateUser(usuario: User) {
+    const url = `${this.api}/usuario/${usuario._id}?token=${this.token}`;
+    console.log(url);
+    return this.http.put(url, usuario).pipe(map((response: any) => {
+      swal('Usuario actualizado', response.usuario.email, 'success');
+      this.saveStorage(response.usuario._id, this.token, response.usuario);
+      return response.usuario;
+    }));
+  }
+
+
   loadStorage() {
     if(localStorage.getItem('token')){
       this.token = localStorage.getItem('token');

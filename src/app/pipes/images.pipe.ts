@@ -9,7 +9,7 @@ export class ImagesPipe implements PipeTransform {
   transform(img: string, type: string = 'user'): any {
     const images = this.api + '/img';
     if(!img) {
-      return images + '/not_found.jpg';
+      return images + '/no-found/no-img.jpg';
     }
 
     if(img.indexOf('https') !== -1){
